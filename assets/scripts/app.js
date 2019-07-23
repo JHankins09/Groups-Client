@@ -9,9 +9,9 @@ const userEvents = require('./user/events')
 // require('./example')
 
 // your JS code goes here
-$(() => {
-  $('#sign-up').on('submit', userEvents.onSignUp)
-  $('#sign-in').on('submit', userEvents.onSignIn)
-  $('#change-pw').on('submit', userEvents.onChangePassword)
-  $('#sign-out').on('submit', userEvents.onSignOut)
-})
+// $(() => {
+//   $('#sign-up').on('submit', userEvents.onSignUp)
+//   $('#sign-in').on('submit', userEvents.onSignIn)
+//   $('#change-pw').on('submit', userEvents.onChangePassword)
+//   $('#sign-out').on('submit', userEvents.onSignOut)
+// })
