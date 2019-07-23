@@ -1,5 +1,40 @@
 @import '~bootstrap/scss/bootstrap';
 
+// body {
+//   height: 100vh;
+//   background: #efefef;
+// }
+
+h1 {
+  font-family: 'Major Mono Display', cursive;
+  font-size: 54px;
+  font-weight: 800;
+}
+
 .communication-bar {
   text-align: center;
+}
+
+// Form styling
+form {
+  background-color: blue;
+  border-radius: 15px;
+  color: #ffffff;
+  margin-top: 15px;
+  padding: 35px;
+  text-align: center;
+
+  input {
+    background: #efefef;
+    border-radius: 15px;
+    margin: 15px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  button {
+    margin-top: 15px;
+    margin-left: 20%;
+    width: 60%;
+  }
 }

@@ -7,6 +7,7 @@ const messageReset = function () {
   $('#system-message').delay(2000).fadeOut(200)
 }
 
+// ------- Sign in and Sign up UI components. -------- //
 const signUpSuccessful = responseData => {
   $('#system-message').show()
   $('#system-message').text(`Nice - you've signed up successfully! Now please sign in!`)
@@ -22,8 +23,8 @@ const signUpFailure = responseData => {
 const signInSuccess = responseData => {
   $('#system-message').show()
   $('#system-message').text(`Welcome ${responseData.user.email}! Check out what's new in your community!`)
+  $('.title').text(`${responseData.user.email}'s community'`)
   messageReset()
-
 }
 
 const signInFailure = responseData => {
@@ -31,6 +32,8 @@ const signInFailure = responseData => {
   $('#system-message').text(`Oops! Forgot you password? Tough...`)
   messageReset()
 }
+// ------- Sign in and Sign up UI components. -------- //
+
 
 module.exports = {
   signUpSuccessful,
