@@ -154,10 +154,10 @@
           </div>
           <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion2">
             <div class="card-body">
-              <form class="d-flex flex-column toggle" id="unknown2">
-                <input name="credentials[email]" type="text" required placeholder="Email">
-                <input name="credentials[password]" type="password" required placeholder="Password">
-                <button type="submit" class="btn btn-primary center-block">Sign in</button>
+              <form class="d-flex flex-column toggle" id="changePassword">
+                <input name="passwords[old]" required type="password" placeholder="old password">
+                <input name="passwords[new]" required type="password" placeholder="new password">
+                <button type="submit" class="btn btn-primary center-block">Update</button>
               </form>
             </div>
           </div>
@@ -174,7 +174,7 @@
           <div id="collapseFour" class="collapse" aria-labelledby="headingThree" data-parent="#accordion2">
             <div class="card-body">
               <form class="d-flex flex-column" id="logOut">
-                Come back soon!
+                <h2>Come back soon!</h2>
                 <button type="submit" class="btn btn-primary center-block">Log out</button>
               </form>
             </div>

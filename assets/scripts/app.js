@@ -11,19 +11,24 @@ const groupEvents = require('./groups/events')
 
 // your JS code goes here
 $(() => {
-  // groupEvents.addHandlers()
+  // Sign up
   $('#sign-up').on('submit', userEvents.onSignUp)
+  // Sign in.
   $('#sign-in').on('submit', userEvents.onSignIn)
-  $('.backbutton').on('click', groupEvents.onBack)
-  // change-password
+  // view Account Settings
   $('#accountSettings').on('click', userEvents.onAccountSettings)
-  $('#updatePassword').on('submit', userEvents.onChangePassword)
+  // change-password
+  $('#changePassword').on('submit', userEvents.onChangePassword)
+  // Sign out
   $('#signOut').on('click', userEvents.onSignOut)
+  // Other stuff...
   $('#otherStuff').on('click', userEvents.onOtherStuff)
   // join group
+
   // sign out
   $('#logOut').on('submit', userEvents.onSignOut)
-  // modal
   // view groups
   $('#getGroups').on('click', groupEvents.onGetGroups)
+  // back to main nav button
+  $('.backbutton').on('click', groupEvents.onBack)
 })

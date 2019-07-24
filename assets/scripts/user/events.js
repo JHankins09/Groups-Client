@@ -29,7 +29,15 @@ const onAccountSettings = event => {
   ui.accountSettings()
 }
 
-// const onChangePassword
+const onChangePassword = event => {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.changePassword(formData)
+    .then(ui.changePasswordSuccess)
+    .catch(ui.changePasswordFail)
+}
+
 //
 // const.onOtherStuff
 //
@@ -44,5 +52,6 @@ module.exports = {
   onSignUp,
   onSignIn,
   onAccountSettings,
-  onSignOut
+  onSignOut,
+  onChangePassword
 }

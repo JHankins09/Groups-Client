@@ -53,7 +53,21 @@ const signOutSuccess = responseData => {
 }
 
 const signOutFail = responseData => {
-  console.log('fail', responseData)
+  $('.system-message').show()
+  $('.system-message').text(`What?? That didn't work? How'd you even get here?`)
+  messageReset()
+}
+
+const changePasswordSuccess = responseData => {
+  $('.system-message').show()
+  $('.system-message').text(`SUCCESS! Write that down! I don't know how to do a 'forgot my password' thing so...`)
+  messageReset()
+}
+
+const changePasswordFail = respondData => {
+  $('.system-message').show()
+  $('.system-message').text(`Uh oh - looks like that password didn't work. Try again!`)
+  messageReset()
 }
 
 module.exports = {
@@ -63,5 +77,7 @@ module.exports = {
   signInFailure,
   accountSettings,
   signOutSuccess,
-  signOutFail
+  signOutFail,
+  changePasswordSuccess,
+  changePasswordFail
 }
