@@ -14,7 +14,12 @@ $(() => {
   // groupEvents.addHandlers()
   $('#sign-up').on('submit', userEvents.onSignUp)
   $('#sign-in').on('submit', userEvents.onSignIn)
+  $('.backbutton').on('click', groupEvents.onBack)
   // change-password
+  $('#accountSettings').on('click', userEvents.onAccountSettings)
+  $('#updatePassword').on('submit', userEvents.onChangePassword)
+  $('#signOut').on('click', userEvents.onSignOut)
+  $('#otherStuff').on('click', userEvents.onOtherStuff)
   // join group
   // sign out
   // modal

@@ -25,7 +25,18 @@ const onSignIn = event => {
     .catch(ui.signInFailure)
 }
 
+const onAccountSettings = event => {
+  ui.accountSettings()
+}
+
+// const onChangePassword
+//
+// const.onOtherStuff
+//
+// const.onSignOut
+
 module.exports = {
   onSignUp,
-  onSignIn
+  onSignIn,
+  onAccountSettings
 }

@@ -1,21 +1,14 @@
+
+
 {{#each groups as |group|}}
-  <h3> {{group.name}}
-  <!-- {{log group}}
-  <section data-id="{{group.id}}">
-    <h6>Name: {{group.name}}</h6>
-    <h3>
-      {{limit group.name 5}}
-    </h3>
-    <h6>Intro:</h6>
-    <p>
-      {{#if group.leader}}
-        {{group.leader}}
-      {{else}}
-        This is a leaderless group!
-      {{/if}}
-    </p>
-  <button class="btn btn-danger leaveGroup"
-  data-id="{{group.id}}">Leave</button>
-  </section>
- -->
+<div class="card col-md-4 col-12" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{group.Name}} <span class="badge badge-info" style="font-family:'Josefin sANS', sans-serif;">{{group.Type}}</h5>
+    <p class="card-text">{{group.Intro}}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Members: "{{group.users.length}}"</li>
+    <li class="list-group-item"></li>
+  </ul>
+</div>
 {{/each}}

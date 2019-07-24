@@ -35,9 +35,16 @@ const signInFailure = responseData => {
 }
 // ------- Sign in and Sign up UI components. -------- //
 
+const accountSettings = responseData => {
+  $('.secondary').addClass('hide')
+  $('.accountDetails').removeClass('hide')
+  $('.title').text('Account Details')
+}
+
 module.exports = {
   signUpSuccessful,
   signUpFailure,
   signInSuccess,
-  signInFailure
+  signInFailure,
+  accountSettings
 }

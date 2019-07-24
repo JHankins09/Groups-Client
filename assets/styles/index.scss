@@ -1,5 +1,34 @@
 @import '~bootstrap/scss/bootstrap';
 
+.content {
+  @include make-row;
+
+  h5 {
+    font-family: 'Press Start 2P', cursive;
+  }
+  p {
+    font-family: 'Josefin Sans', sans-serif;
+  }
+
+  &:empty {
+    &::before {
+      color: lighten($info, 25%);
+      content: 'Click Get Books';
+      font-size: 10vh;
+      line-height: .85;
+      text-align: center;
+      width: 90%;
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+  }
+}
+
+.backbutton {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
 body {
   background: #efefef;
   font-family: 'Major Mono Display', cursive;

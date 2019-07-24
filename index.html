@@ -11,7 +11,7 @@
   <!-- Do not add `script` tags-->
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-  <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Press+Start+2P&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Major+Mono+Display|Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 
 <body class="container-fluid">
@@ -104,9 +104,9 @@
 
           <div class="card col-md-6 col-12" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title" id="get-groups">Update your user account</h5>
-              <p class="card-text">It's easier than hearding cats&mdash;we think...</p>
-              <a href="#" class="btn btn-primary">Create</a>
+              <h5 class="card-title" id="get-groups">Account Details</h5>
+              <p class="card-text">You know, change your password and sign-out and stuff</p>
+              <a href="#" class="btn btn-primary" id="accountSettings">Update</a>
             </div>
           </div>
 
@@ -122,6 +122,15 @@
   <div class="GroupsViewAll container-fluid hide">
     <h1 class='title'></h1>
     <div id="content" class="content"></div>
+    <button type="button" class="btn btn-outline-secondary backbutton">Back &larr;</button>
+  </div>
+
+  <div class="accountDetails container-fluid hide">
+    <div class="communication-bar">
+      <h1 class="title">Groups</h1>
+      <h2 class="system-message"></h2>
+    </div>
+    <button type="button" class="btn btn-outline-secondary backbutton">Back &larr;</button>
   </div>
 
 <!-- <div class="footer">

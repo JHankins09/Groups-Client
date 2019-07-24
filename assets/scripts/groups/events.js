@@ -14,6 +14,10 @@ const onGetGroups = event => {
     .catch(ui.getGroupsFail)
 }
 
+const onBack = event => {
+  ui.back()
+}
+
 // const addHandlers = () => {
 //  $('#getBooksButton').on('click', onGetBooks)
 //  $('#clearBooksButton').on('click', onClearBooks)
@@ -22,5 +26,6 @@ const onGetGroups = event => {
 
 module.exports = {
   // addHandlers,
-  onGetGroups
+  onGetGroups,
+  onBack
 }

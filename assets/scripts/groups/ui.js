@@ -13,6 +13,7 @@ const getGroupsSuccess = responseData => {
   $('.secondary').addClass('hide')
   $('.GroupsViewAll').removeClass('hide')
   $('.title').text('Explore your groups')
+  console.log('groups', responseData.groups)
   const showGroupsHtml = showGroupsTemplate({ groups: responseData.groups })
   $('.content').append(showGroupsHtml)
 }
@@ -21,7 +22,16 @@ const getGroupsFail = responseData => {
   console.log('failure', responseData)
 }
 
+const back = () => {
+  $('.secondary').removeClass('hide')
+  $('.GroupsViewAll').addClass('hide')
+  $('.accountDetails').addClass('hide')
+  $('.content').html('')
+  $('.title').text('Your communities')
+}
+
 module.exports = {
   getGroupsSuccess,
-  getGroupsFail
+  getGroupsFail,
+  back
 }
