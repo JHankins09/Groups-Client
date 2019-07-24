@@ -83,7 +83,7 @@
 
           <div class="card col-md-5 col-12" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title" id="get-groups">Explore a new community</h5>
+              <h5 class="card-title">Explore a new community</h5>
               <p class="card-text">Take some time to find a new crew!</p>
               <a href="#" class="btn btn-primary" id="getGroups">Go now</a>
             </div>
@@ -93,7 +93,7 @@
 
           <div class="card col-md-5 col-12" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title" id="get-groups">Get back to your people</h5>
+              <h5 class="card-title">Get back to your people</h5>
               <p class="card-text">See what's new in your neck of the woods</p>
               <a href="#" class="btn btn-primary" id="userCommunities">Get back</a>
             </div>
@@ -105,9 +105,9 @@
 
           <div class="card col-md-5 col-12" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title" id="get-groups">Create a new group</h5>
+              <h5 class="card-title">Create a new group</h5>
               <p class="card-text">It's easier than hearding cats&mdash;we think...</p>
-              <a href="#" class="btn btn-primary">Create</a>
+              <a href="#" class="btn btn-primary" id="goToCreateGroup">Create</a>
             </div>
           </div>
 
@@ -115,7 +115,7 @@
 
           <div class="card col-md-5 col-12" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title" id="get-groups">Account Details</h5>
+              <h5 class="card-title">Account Details</h5>
               <p class="card-text">You know, change your password and sign-out and stuff</p>
               <a href="#" class="btn btn-primary" id="accountSettings">Update</a>
             </div>
@@ -129,12 +129,15 @@
     </div>
   </div>
 
+<!-- List of all non-user affiliated groups -->
   <div class="GroupsViewAll container-fluid hide">
     <h1 class='title'></h1>
-    <div id="content" class="content"></div>
+    <div class="row"></div>
+      <div id="content" class="content"></div>
     <button type="button" class="btn btn-outline-secondary backbutton">Back &larr;</button>
   </div>
 
+<!-- Account detail screen -->
   <div class="accountDetails container-fluid hide">
     <div class="communication-bar">
       <h1 class="title"></h1>
@@ -185,7 +188,30 @@
     </div>
     <button type="button" class="btn btn-outline-secondary backbutton">Back &larr;</button>
   </div>
+
+<!-- Create Group Screen -->
+<div class="createGroupView container-fluid hide">
+  <div class="communication-bar">
+    <h1 class="title"></h1>
+    <h2 class="system-message"></h2>
+  </div>
+<!-- Apply grid style -->
+    <div class="CreateNewDialog">
+      <p>Fantasy Footballer? ~ One of many roommates? ~ Hard-core gamer? <br/><br/>&mdash;Great!&mdash;<br/><br/>Make your group and manage your squad like a pro!</p>
     </div>
+    <div class="row">
+      <div class="col-md-2 col-12"></div>
+      <form class="d-flex flex-column col-md-8 col-12" id="create-group">
+      <h3>Build your group here.</h3>
+      <input name="group[Name]" type="text" required placeholder="Group name">
+      <input name="group[Type]" type="text" required placeholder="Type">
+      <input name="group[Intro]" type="text" required placeholder="Description">
+      <button type="submit" class="btn btn-primary center-block">Create</button>
+    </form>
+    <div class="col-md-2 col-12"></div>
+    <button type="button" class="btn btn-outline-secondary backbutton">Back &larr;</button>
+  </div>
+</div>
 <!-- <div class="footer">
 This app brough to you by James Hankins
 </div> -->

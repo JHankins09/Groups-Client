@@ -37,16 +37,7 @@ const signInFailure = responseData => {
 }
 // ------- Sign in and Sign up UI components. -------- //
 
-const accountSettings = responseData => {
-  $('.secondary').addClass('hide')
-  $('.accountDetails').removeClass('hide')
-  $('#collapseThree').removeClass('show')
-  $('#collapseFour').removeClass('show')
-  $('.title').text('Account Details')
-}
-
 const signOutSuccess = responseData => {
-  console.log('success', responseData)
   $('.primary').removeClass('hide')
   $('.accountDetails').addClass('hide')
   $('.title').text('Groups')
@@ -75,7 +66,6 @@ module.exports = {
   signUpFailure,
   signInSuccess,
   signInFailure,
-  accountSettings,
   signOutSuccess,
   signOutFail,
   changePasswordSuccess,

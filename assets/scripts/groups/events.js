@@ -14,8 +14,13 @@ const onGetGroups = event => {
     .catch(ui.getGroupsFail)
 }
 
-const onBack = event => {
-  ui.back()
+const onCreateGroup = event => {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.createGroup(formData)
+    .then(ui.createGroupSuccess)
+    .catch(ui.createGroupFail)
 }
 
 // const addHandlers = () => {
@@ -27,5 +32,5 @@ const onBack = event => {
 module.exports = {
   // addHandlers,
   onGetGroups,
-  onBack
+  onCreateGroup
 }

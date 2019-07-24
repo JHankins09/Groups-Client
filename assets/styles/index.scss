@@ -6,28 +6,22 @@ body {
   height: 100vh;
 }
 
+.CreateNewDialog {
+  p {
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+  }
+}
+
 // Handlebars styling
 .content {
   @include make-row;
-
   h5 {
     font-family: 'Press Start 2P', cursive;
   }
+
   p {
     font-family: 'Josefin Sans', sans-serif;
-  }
-
-  &:empty {
-    &::before {
-      color: lighten($info, 25%);
-      content: 'Click Get Books';
-      font-size: 10vh;
-      line-height: .85;
-      text-align: center;
-      width: 90%;
-      padding-left: 5%;
-      padding-right: 5%;
-    }
   }
 }
 
@@ -68,11 +62,13 @@ body {
 
 .title {
   background: black;
-  color: white;
-  padding-top: 1.5vw;
-  padding-bottom: 1.5vw;
-  margin-top: 15px;
   border-radius: 5px;
+  color: white;
+  margin-top: 15px;
+  padding-bottom: 1.5vw;
+  padding-top: 1.5vw;
+  text-align: center;
+
   h1 {
     font-size: 6vw;
   }

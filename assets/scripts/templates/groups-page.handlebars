@@ -1,14 +1,18 @@
 
 
 {{#each groups as |group|}}
-<div class="card col-md-4 col-12" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">{{group.Name}} <span class="badge badge-info" style="font-family:'Josefin sANS', sans-serif;">{{group.Type}}</h5>
-    <p class="card-text">{{group.Intro}}</p>
+<div class="row col-md-6 col-12">
+  <div class="col-md-1 col-12"></div>
+  <div class="card col-md-10 col-12" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{group.Name}} <span class="badge badge-info" style="font-family:'Josefin sANS', sans-serif;">{{group.Type}}</h5>
+      <p class="card-text">{{group.Intro}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Members: {{group.users.length}}</li>
+      <li class="list-group-item"></li>
+    </ul>
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Members: "{{group.users.length}}"</li>
-    <li class="list-group-item"></li>
-  </ul>
+  <div class="col-md-1 col-12"></div>
 </div>
 {{/each}}

@@ -13,6 +13,18 @@ const getGroups = () => {
   })
 }
 
+const createGroup = formData => {
+  return $.ajax({
+    url: config.apiUrl + '/groups/',
+    data: formData,
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
-  getGroups
+  getGroups,
+  createGroup
 }
