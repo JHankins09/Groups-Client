@@ -4,32 +4,34 @@ const store = require('./../store.js')
 
 const messageReset = function () {
   $('form').trigger('reset')
-  $('#system-message').delay(2000).fadeOut(200)
+  $('.system-message').delay(2000).fadeOut(200)
 }
 
 // ------- Sign in and Sign up UI components. -------- //
 const signUpSuccessful = responseData => {
-  $('#system-message').show()
-  $('#system-message').text(`Nice - you've signed up successfully! Now please sign in!`)
+  $('.system-message').show()
+  $('.system-message').text(`Nice - you've signed up successfully! Now please sign in!`)
   messageReset()
 }
 
 const signUpFailure = responseData => {
-  $('#system-message').show()
-  $('#system-message').text(`Oops! Something went wrong. Try signing in!`)
+  $('.system-message').show()
+  $('.system-message').text(`Oops! Something went wrong. Try signing in!`)
   messageReset()
 }
 
 const signInSuccess = responseData => {
-  $('#system-message').show()
-  $('#system-message').text(`Welcome ${responseData.user.email}! Check out what's new in your community!`)
-  $('.title').text(`${responseData.user.email}'s community'`)
+  $('.system-message').show()
+  $('.system-message').text(`Welcome ${responseData.user.email}! Check out what's new in your community!`)
+  $('.title').text(`Your communities`)
+  $('.primary').addClass('hide')
+  $('.secondary').removeClass('hide')
   messageReset()
 }
 
 const signInFailure = responseData => {
-  $('#system-message').show()
-  $('#system-message').text(`Oops! Forgot you password? Tough...`)
+  $('.system-message').show()
+  $('.system-message').text(`Oops! Forgot you password? Tough...`)
   messageReset()
 }
 // ------- Sign in and Sign up UI components. -------- //

@@ -1,74 +1,128 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-      <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Press+Start+2P&display=swap" rel="stylesheet">
-    </head>
-    <body>
+<head>
+  <title>Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Sign in and Sign up UI components. -->
-      <div class="pre-sign-in container-fluid">
-        <div class="communication-bar">
-        <h1>Groups</h1>
-        <h2 id="system-message"></h2>
-      </div>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body class="container-fluid">
+
+  <!-- Sign in and Sign up UI components. -->
+  <div class="primary container-fluid">
+    <div class="communication-bar">
+      <h1 class="title">Groups</h1>
+      <h2 class="system-message"></h2>
+    </div>
       <!-- Apply Accordian effect -->
-        <div class="main row d-flex flex-row">
-            <div class="col-sm-2" id="sign-up-div"></div>
-            <div class="col-sm-8" id="accordion">
-              <div class="card">
-                <div class="card-header" id="headingOne">
-                  <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseTwo">
-                      Sign in and get back to your groups
-                    </button>
-                  </h5>
-                </div>
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                  <div class="card-body">
-                    <form class="d-flex flex-column toggle" id="sign-in">
-                      <input name="credentials[email]" type="text" required placeholder="Email">
-                      <input name="credentials[password]" type="password" required placeholder="Password">
-                      <button type="submit" class="btn btn-primary center-block">Sign in</button>
-                    </form>
-                  </div>
-                </div>
+      <div class="row d-flex flex-row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6" id="accordion">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseTwo">
+                  Sign in
+                </button>
+              </h5>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+              <div class="card-body">
+                <form class="d-flex flex-column toggle" id="sign-in">
+                  <input name="credentials[email]" type="text" required placeholder="Email">
+                  <input name="credentials[password]" type="password" required placeholder="Password">
+                  <button type="submit" class="btn btn-primary center-block">Sign in</button>
+                </form>
               </div>
-              <div class="card">
-                <div class="card-header" id="headingTwo">
-                  <h5 class="mb-0">
-                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
-                      Not from 'round here? Sign up now!
-                    </button>
-                  </h5>
-                </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+                  Sign up
+                </button>
+              </h5>
+            </div>
 
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                  <div class="card-body">
-                    <form class="d-flex flex-column" id="sign-up">
-                      <input name="credentials[email]" type="text" required placeholder="Email">
-                      <input name="credentials[password]" type="password" required placeholder="Password">
-                      <input name="credentials[password_confirmation]" type="password" required placeholder="Confirm Password">
-                      <button type="submit" class="btn btn-primary center-block">Sign up</button>
-                    </form>
-                  </div>
-                </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+              <div class="card-body">
+                <form class="d-flex flex-column" id="sign-up">
+                  <input name="credentials[email]" type="text" required placeholder="Email">
+                  <input name="credentials[password]" type="password" required placeholder="Password">
+                  <input name="credentials[password_confirmation]" type="password" required placeholder="Confirm Password">
+                  <button type="submit" class="btn btn-primary center-block">Sign up</button>
+                </form>
               </div>
-              <div class="auth-space row">
-            <div class="col-sm-2"></div>
+            </div>
+          </div>
         </div>
+        <div class="col-md-3"></div>
       </div>
-      <!-- End of Sign Up/Sign In Space -->
-          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    </body>
+  </div>
+
+  <div class="secondary container-fluid hide">
+    <div class="communication-bar">
+      <h1 class="title">Groups</h1>
+      <h2 class="system-message"></h2>
+    </div>
+    <div class="row d-flex flex-row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8 row">
+
+        <div class="card col-sm-5" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title" id="get-groups">View your community</h5>
+            <p class="card-text">Jump back in and see what your community is up to.</p>
+            <a href="#" class="btn btn-primary">Go now</a>
+          </div>
+        </div>
+
+        <div class="col-sm-2"></div>
+
+        <div class="card col-sm-5" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title" id="get-groups">Create a new group</h5>
+            <p class="card-text">It's easier than hearding cats&mdash;we think...</p>
+            <a href="#" class="btn btn-primary">Create</a>
+          </div>
+        </div>
+
+        <div class="col-sm-3"></div>
+
+        <div class="card col-sm-6" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title" id="get-groups">Update your user account</h5>
+            <p class="card-text">It's easier than hearding cats&mdash;we think...</p>
+            <a href="#" class="btn btn-primary">Create</a>
+          </div>
+        </div>
+
+        <div class="col-sm-3"></div>
+
+
+      </div>
+      <div class="col-md-2"></div>
+
+    </div>
+  </div>
+
+<div class="footer">
+Plan to add modal for log-out, change PW, and about the developer.
+</div>
+
+  <!-- End of Sign Up/Sign In Space -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+
 </html>

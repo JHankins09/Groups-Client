@@ -15,4 +15,8 @@ $(() => {
   // change-password
   // join group
   // sign out
+  // modal
+  $('#myModal').on('shown.bs.modal', function () {
+    $('#myInput').trigger('focus')
+  })
 })
