@@ -69,6 +69,7 @@
       </div>
   </div>
 
+<!-- Post SignIn Groups Content -->
   <div class="secondary container-fluid hide">
     <div class="communication-bar">
       <h1 class="title">Groups</h1>
@@ -76,38 +77,41 @@
     </div>
     <div class="row d-flex flex-row">
       <div class="col-md-2"></div>
-      <div class="col-md-8 row">
+      <div class="col-md-8">
 
-        <div class="card col-sm-5" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title" id="get-groups">View your community</h5>
-            <p class="card-text">Jump back in and see what your community is up to.</p>
-            <a href="#" class="btn btn-primary">Go now</a>
+        <div class="row">
+          <div class="card col-md-5 col-12" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title" id="get-groups">View your community</h5>
+              <p class="card-text">Jump back in and see what your community is up to.</p>
+              <a href="#" class="btn btn-primary" id="getGroups">Go now</a>
+            </div>
+          </div>
+
+          <div class="col-md-2 col-12"></div>
+
+          <div class="card col-md-5 col-12" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title" id="get-groups">Create a new group</h5>
+              <p class="card-text">It's easier than hearding cats&mdash;we think...</p>
+              <a href="#" class="btn btn-primary">Create</a>
+            </div>
           </div>
         </div>
 
-        <div class="col-sm-2"></div>
+        <div class="row">
+          <div class="col-md-3"></div>
 
-        <div class="card col-sm-5" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title" id="get-groups">Create a new group</h5>
-            <p class="card-text">It's easier than hearding cats&mdash;we think...</p>
-            <a href="#" class="btn btn-primary">Create</a>
+          <div class="card col-md-6 col-12" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title" id="get-groups">Update your user account</h5>
+              <p class="card-text">It's easier than hearding cats&mdash;we think...</p>
+              <a href="#" class="btn btn-primary">Create</a>
+            </div>
           </div>
+
+          <div class="col-md-3"></div>
         </div>
-
-        <div class="col-sm-3"></div>
-
-        <div class="card col-sm-6" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title" id="get-groups">Update your user account</h5>
-            <p class="card-text">It's easier than hearding cats&mdash;we think...</p>
-            <a href="#" class="btn btn-primary">Create</a>
-          </div>
-        </div>
-
-        <div class="col-sm-3"></div>
-
 
       </div>
       <div class="col-md-2"></div>
@@ -115,9 +119,14 @@
     </div>
   </div>
 
-<div class="footer">
-Plan to add modal for log-out, change PW, and about the developer.
-</div>
+  <div class="GroupsViewAll container-fluid hide">
+    <h1 class='title'></h1>
+    <div id="content" class="content"></div>
+  </div>
+
+<!-- <div class="footer">
+This app brough to you by James Hankins
+</div> -->
 
   <!-- End of Sign Up/Sign In Space -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

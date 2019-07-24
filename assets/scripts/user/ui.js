@@ -21,8 +21,7 @@ const signUpFailure = responseData => {
 }
 
 const signInSuccess = responseData => {
-  $('.system-message').show()
-  $('.system-message').text(`Welcome ${responseData.user.email}! Check out what's new in your community!`)
+  store.user = responseData.user
   $('.title').text(`Your communities`)
   $('.primary').addClass('hide')
   $('.secondary').removeClass('hide')
@@ -35,7 +34,6 @@ const signInFailure = responseData => {
   messageReset()
 }
 // ------- Sign in and Sign up UI components. -------- //
-
 
 module.exports = {
   signUpSuccessful,

@@ -7,13 +7,18 @@ body {
 }
 
 h1 {
-  font-size: 54px;
+  font-size: 7vw;
   font-weight: 800;
 }
 
 .system-message {
   font-family: 'Press Start 2P', cursive;
   font-size: 1.2em;
+}
+
+.card-text {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 14px;
 }
 
 .hide {
@@ -34,7 +39,7 @@ button {
 }
 
 .title {
-  padding: 35px;
+  padding-top: 1.5vw;
 }
 
 .card-header {
@@ -64,6 +69,16 @@ form {
     margin-top: 15px;
     width: 60%;
   }
+}
+
+.header {
+  background-color: #fefefe;
+  bottom: 100;
+  left: 0;
+  padding: 1rem;
+  position: absolute;
+  right: 0;
+  text-align: center;
 }
 
 .footer {
