@@ -22,9 +22,11 @@ const signUpFailure = responseData => {
 
 const signInSuccess = responseData => {
   store.user = responseData.user
-  $('.title').text(`Your communities`)
+  $('.title').text(`Welcome!`)
   $('.primary').addClass('hide')
   $('.secondary').removeClass('hide')
+  $('.system-message').show()
+  $('.system-message').text(`Logged in as: ${store.user.email}`)
   messageReset()
 }
 
@@ -38,7 +40,20 @@ const signInFailure = responseData => {
 const accountSettings = responseData => {
   $('.secondary').addClass('hide')
   $('.accountDetails').removeClass('hide')
+  $('#collapseThree').removeClass('show')
+  $('#collapseFour').removeClass('show')
   $('.title').text('Account Details')
+}
+
+const signOutSuccess = responseData => {
+  console.log('success', responseData)
+  $('.primary').removeClass('hide')
+  $('.accountDetails').addClass('hide')
+  $('.title').text('Groups')
+}
+
+const signOutFail = responseData => {
+  console.log('fail', responseData)
 }
 
 module.exports = {
@@ -46,5 +61,7 @@ module.exports = {
   signUpFailure,
   signInSuccess,
   signInFailure,
-  accountSettings
+  accountSettings,
+  signOutSuccess,
+  signOutFail
 }

@@ -33,10 +33,16 @@ const onAccountSettings = event => {
 //
 // const.onOtherStuff
 //
-// const.onSignOut
+const onSignOut = event => {
+  event.preventDefault()
+  api.signOut()
+    .then(ui.signOutSuccess)
+    .catch(ui.signOutFail)
+}
 
 module.exports = {
   onSignUp,
   onSignIn,
-  onAccountSettings
+  onAccountSettings,
+  onSignOut
 }

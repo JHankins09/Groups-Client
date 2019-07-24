@@ -1,5 +1,12 @@
 @import '~bootstrap/scss/bootstrap';
 
+body {
+  background: #efefef;
+  font-family: 'Major Mono Display', cursive;
+  height: 100vh;
+}
+
+// Handlebars styling
 .content {
   @include make-row;
 
@@ -24,20 +31,11 @@
   }
 }
 
+// Backbutton styling
 .backbutton {
   margin-top: 25px;
   margin-bottom: 25px;
-}
-
-body {
-  background: #efefef;
-  font-family: 'Major Mono Display', cursive;
-  height: 100vh;
-}
-
-h1 {
-  font-size: 7vw;
-  font-weight: 800;
+  font-family: 'Press Start 2P', cursive;
 }
 
 .system-message {
@@ -45,36 +43,41 @@ h1 {
   font-size: 1.2em;
 }
 
-.card-text {
-  font-family: 'Press Start 2P', cursive;
-  font-size: 14px;
+// Card styling
+
+.card {
+  margin-top: 15px;
+  p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 14px;
+  }
+  .card-header {
+    font-size: 36px;
+    font-weight: 800;
+  }
 }
 
 .hide {
   display: none;
 }
 
-.card {
-  margin-top: 15px;
-}
 
 .communication-bar {
   text-align: center;
 }
 
-button {
-  margin-left: 25%;
-  width: 50%;
-}
-
 .title {
+  background: black;
+  color: white;
   padding-top: 1.5vw;
+  padding-bottom: 1.5vw;
+  margin-top: 15px;
+  border-radius: 5px;
+  h1 {
+    font-size: 6vw;
+  }
 }
 
-.card-header {
-  font-size: 36px;
-  font-weight: 800;
-}
 // Form styling
 
 form {

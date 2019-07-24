@@ -80,10 +80,11 @@
       <div class="col-md-8">
 
         <div class="row">
+
           <div class="card col-md-5 col-12" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title" id="get-groups">View your community</h5>
-              <p class="card-text">Jump back in and see what your community is up to.</p>
+              <h5 class="card-title" id="get-groups">Explore a new community</h5>
+              <p class="card-text">Take some time to find a new crew!</p>
               <a href="#" class="btn btn-primary" id="getGroups">Go now</a>
             </div>
           </div>
@@ -92,17 +93,27 @@
 
           <div class="card col-md-5 col-12" style="width: 18rem;">
             <div class="card-body">
+              <h5 class="card-title" id="get-groups">Get back to your people</h5>
+              <p class="card-text">See what's new in your neck of the woods</p>
+              <a href="#" class="btn btn-primary" id="userCommunities">Get back</a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="card col-md-5 col-12" style="width: 18rem;">
+            <div class="card-body">
               <h5 class="card-title" id="get-groups">Create a new group</h5>
               <p class="card-text">It's easier than hearding cats&mdash;we think...</p>
               <a href="#" class="btn btn-primary">Create</a>
             </div>
           </div>
-        </div>
 
-        <div class="row">
-          <div class="col-md-3"></div>
+          <div class="col-md-2 col-12"></div>
 
-          <div class="card col-md-6 col-12" style="width: 18rem;">
+          <div class="card col-md-5 col-12" style="width: 18rem;">
             <div class="card-body">
               <h5 class="card-title" id="get-groups">Account Details</h5>
               <p class="card-text">You know, change your password and sign-out and stuff</p>
@@ -110,7 +121,6 @@
             </div>
           </div>
 
-          <div class="col-md-3"></div>
         </div>
 
       </div>
@@ -127,12 +137,55 @@
 
   <div class="accountDetails container-fluid hide">
     <div class="communication-bar">
-      <h1 class="title">Groups</h1>
+      <h1 class="title"></h1>
       <h2 class="system-message"></h2>
+    </div>
+    <!-- Apply Accordian effect -->
+    <div class="row d-flex flex-row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6" id="accordion2">
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseFour">
+                Change Password
+              </button>
+            </h5>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion2">
+            <div class="card-body">
+              <form class="d-flex flex-column toggle" id="unknown2">
+                <input name="credentials[email]" type="text" required placeholder="Email">
+                <input name="credentials[password]" type="password" required placeholder="Password">
+                <button type="submit" class="btn btn-primary center-block">Sign in</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingFour">
+            <h5 class="mb-0">
+              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseThree">
+                Log Out
+              </button>
+            </h5>
+          </div>
+
+          <div id="collapseFour" class="collapse" aria-labelledby="headingThree" data-parent="#accordion2">
+            <div class="card-body">
+              <form class="d-flex flex-column" id="logOut">
+                Come back soon!
+                <button type="submit" class="btn btn-primary center-block">Log out</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3"></div>
     </div>
     <button type="button" class="btn btn-outline-secondary backbutton">Back &larr;</button>
   </div>
-
+    </div>
 <!-- <div class="footer">
 This app brough to you by James Hankins
 </div> -->

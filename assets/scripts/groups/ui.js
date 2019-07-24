@@ -27,7 +27,7 @@ const back = () => {
   $('.GroupsViewAll').addClass('hide')
   $('.accountDetails').addClass('hide')
   $('.content').html('')
-  $('.title').text('Your communities')
+  $('.title').text('Dashboard')
 }
 
 module.exports = {

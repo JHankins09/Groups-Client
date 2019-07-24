@@ -22,6 +22,7 @@ $(() => {
   $('#otherStuff').on('click', userEvents.onOtherStuff)
   // join group
   // sign out
+  $('#logOut').on('submit', userEvents.onSignOut)
   // modal
   // view groups
   $('#getGroups').on('click', groupEvents.onGetGroups)
