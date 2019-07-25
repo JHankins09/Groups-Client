@@ -40,9 +40,24 @@ const changePassword = formData => {
   })
 }
 
+const getUserData = (data) => {
+  return $.ajax({
+    url: config.apiUrl + '/users/' + data,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+//     }
+//   })
+// }
+
 module.exports = {
   signUp,
   signIn,
   signOut,
-  changePassword
+  changePassword,
+  getUserData
 }

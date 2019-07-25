@@ -14,8 +14,13 @@ const onGoToCreateGroup = event => {
   ui.goToCreateGroup()
 }
 
+const onUserCommunities = event => {
+  ui.goToUserCommunities()
+}
+
 module.exports = {
   onBack,
   onAccountSettings,
-  onGoToCreateGroup
+  onGoToCreateGroup,
+  onUserCommunities
 }

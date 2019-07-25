@@ -3,6 +3,7 @@
 const api = require('./api')
 const ui = require('./ui')
 const getFormFields = require('./../../../lib/get-form-fields')
+const store = require('../store.js')
 // Set up event handlers
 
 // get all books event handler:
@@ -44,9 +45,18 @@ const onSignOut = event => {
     .catch(ui.signOutFail)
 }
 
+// Used to help provide memberhsips for active user
+const onGetUserData = event => {
+  const userID = store.user.id
+  console.log(userID)
+  api.getUserData(userID)
+    .then(ui.userDataUpdated)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
-  onChangePassword
+  onChangePassword,
+  onGetUserData
 }

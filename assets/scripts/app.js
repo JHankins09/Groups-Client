@@ -6,6 +6,7 @@
 const userEvents = require('./user/events')
 const groupEvents = require('./groups/events')
 const generalEvents = require('./General/events')
+const membershipEvents = require('./Memberships/events')
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
@@ -25,13 +26,21 @@ $(() => {
   $('#logOut').on('submit', userEvents.onSignOut)
 
   // Groups Features
+  // Handlebars Events
+  groupEvents.addHandlers()
   // view groups
   $('#getGroups').on('click', groupEvents.onGetGroups)
   // view group (single)
   $('.viewGroup').on('click', groupEvents.onGetGroup)
-  // join group
   // create group
   $('#create-group').on('submit', groupEvents.onCreateGroup)
+
+  // Memberships features
+  // Handlebars Events
+  membershipEvents.addHandlers()
+  // Get memberships
+  $('#userCommunities').on('click', userEvents.onGetUserData)
+  // $('#userCommunities').on('click', membershipEvents.onGetMemberships)
 
   // General App Features
   // view Account Settings
@@ -42,7 +51,4 @@ $(() => {
   $('.backbutton').on('click', generalEvents.onBack)
   // go to create group
   $('#goToCreateGroup').on('click', generalEvents.onGoToCreateGroup)
-
-  // add hanlebars event handlers!
-  groupEvents.addHandlers()
 })

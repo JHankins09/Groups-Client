@@ -27,7 +27,7 @@ const deleteGroupSuccess = () => {
 }
 
 const onDeleteGroup = event => {
-  const groupId = $(event.target).data('id')
+  const groupId = $(event.target).closest('ul').data('id')
   api.deleteGroup(groupId)
     .then(deleteGroupSuccess)
     .catch(ui.deleteFailure)
@@ -43,6 +43,7 @@ const onCreateGroup = event => {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
+  console.log(formData)
   api.createGroup(formData)
     .then(createGroupSuccess)
     .catch(ui.createGroupFail)

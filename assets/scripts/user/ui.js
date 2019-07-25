@@ -61,6 +61,10 @@ const changePasswordFail = respondData => {
   messageReset()
 }
 
+const userDataUpdated = responseData => {
+  console.log(responseData)
+}
+
 module.exports = {
   signUpSuccessful,
   signUpFailure,
@@ -69,5 +73,6 @@ module.exports = {
   signOutSuccess,
   signOutFail,
   changePasswordSuccess,
-  changePasswordFail
+  changePasswordFail,
+  userDataUpdated
 }
