@@ -12,9 +12,12 @@
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">Members: {{group.users}}</li>
-      <li class="list-group-item"><button type="button" class="btn btn-outline-secondary joinGroup" data-id="{{group.id}}">Join this group!</button></li>
+      <li class="list-group-item"><button type="button" class="btn btn-outline-primary joinGroup" data-id="{{group.id}}">Join this group!</button></li>
+      <li class="list-group-item"><button type="button" class="btn btn-danger deleteGroup" data-id="{{group.id}}">Delete {{group.Name}}</button></li>
+      <li class="list-group-item"><button type="button" class="btn btn-secondary getGroups">Back to all groups &larr;</button></li>
     </ul>
-    <button type="button" class="btn btn-outline-danger deleteGroup" data-id="{{group.id}}">Delete</button>
+    <br/>
+    <br/>
   </div>
   <div class="col-md-1 col-12"></div>
 </div>

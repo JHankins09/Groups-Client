@@ -21,17 +21,30 @@ const onGetGroup = event => {
 }
 
 // Delete a group
+const deleteGroupSuccess = () => {
+  ui.deleteSuccess()
+  onGetGroups()
+}
+
 const onDeleteGroup = event => {
-  console.log('Clicked! This bitch is getting deleted!', event.target)
+  const groupId = $(event.target).data('id')
+  api.deleteGroup(groupId)
+    .then(deleteGroupSuccess)
+    .catch(ui.deleteFailure)
 }
 
 // Create a group
+const createGroupSuccess = () => {
+  ui.createGroupSuccess()
+  onGetGroups()
+}
+
 const onCreateGroup = event => {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
   api.createGroup(formData)
-    .then(ui.createGroupSuccess)
+    .then(createGroupSuccess)
     .catch(ui.createGroupFail)
 }
 
@@ -39,6 +52,7 @@ const onCreateGroup = event => {
 const addHandlers = () => {
   $('.content').on('click', '.viewGroup', onGetGroup)
   $('.content').on('click', '.deleteGroup', onDeleteGroup)
+  $('.content').on('click', '.getGroups', onGetGroups)
 }
 
 module.exports = {
