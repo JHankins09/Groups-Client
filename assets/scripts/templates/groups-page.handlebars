@@ -1,4 +1,4 @@
-
+<!-- For retrieving all groups -->
 
 {{#each groups as |group|}}
 <div class="row col-md-6 col-12">
@@ -12,6 +12,7 @@
       <li class="list-group-item">Members: {{group.users.length}}</li>
       <li class="list-group-item"></li>
     </ul>
+    <button type="button" class="btn btn-outline-secondary viewGroup" data-id="{{group.id}}">View</button>
   </div>
   <div class="col-md-1 col-12"></div>
 </div>

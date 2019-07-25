@@ -27,6 +27,8 @@ $(() => {
   // Groups Features
   // view groups
   $('#getGroups').on('click', groupEvents.onGetGroups)
+  // view group (single)
+  $('.viewGroup').on('click', groupEvents.onGetGroup)
   // join group
   // create group
   $('#create-group').on('submit', groupEvents.onCreateGroup)
@@ -40,4 +42,7 @@ $(() => {
   $('.backbutton').on('click', generalEvents.onBack)
   // go to create group
   $('#goToCreateGroup').on('click', generalEvents.onGoToCreateGroup)
+
+  // add hanlebars event handlers!
+  groupEvents.addHandlers()
 })

@@ -3,6 +3,7 @@
 const api = require('./api')
 const ui = require('./ui')
 const getFormFields = require('./../../../lib/get-form-fields')
+const store = require('./../store.js')
 
 // Get all groups
 const onGetGroups = event => {

@@ -1,5 +1,6 @@
 'use strict'
 
+const store = require('./../store.js')
 const showGroupsTemplate = require('../templates/groups-page.handlebars')
 const showGroupTemplate = require('../templates/single-group-page.handlebars')
 

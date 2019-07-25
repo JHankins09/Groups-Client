@@ -13,6 +13,15 @@ body {
   }
 }
 
+.standard {
+  font-size: 1.2em;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.viewGroup, .deleteGroup {
+  margin: 15px;
+}
+
 // Handlebars styling
 .content {
   @include make-row;
