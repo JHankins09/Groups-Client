@@ -6,6 +6,15 @@ body {
   height: 100vh;
 }
 
+#editGroup {
+  input, h6, button {
+    margin: 15px;
+    font-family: 'Josefin Sans', sans-serif;
+    width: 80%;
+    text-align: center;
+  }
+}
+
 .CreateNewDialog {
   p {
     font-family: 'Josefin Sans', sans-serif;
@@ -18,7 +27,7 @@ body {
   font-family: 'Josefin Sans', sans-serif;
 }
 
-.joinGroup, .viewGroup, .deleteGroup, .getGroups {
+.joinGroup, .viewGroup, .deleteGroup, .getGroups, .viewMembership {
   margin: 15px;
   font-family: 'Josefin Sans', sans-serif;
 }

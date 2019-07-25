@@ -43,10 +43,21 @@ const onCreateGroup = event => {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
-  console.log(formData)
   api.createGroup(formData)
     .then(createGroupSuccess)
     .catch(ui.createGroupFail)
+}
+
+const onUpdateGroup = event => {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  const groupID = $(event.target).data('id')
+  console.log(groupID)
+  console.log(formData)
+  api.updateGroup(formData, groupID)
+    .then(console.log('Success!'))
+    .catch(console.log('Failure! DAMMIT!'))
 }
 
 // And Handlers that live in Handlebars Template
@@ -54,6 +65,7 @@ const addHandlers = () => {
   $('.content').on('click', '.viewGroup', onGetGroup)
   $('.content').on('click', '.deleteGroup', onDeleteGroup)
   $('.content').on('click', '.getGroups', onGetGroups)
+  $('.content').on('submit', '.editGroup', onUpdateGroup)
 }
 
 module.exports = {

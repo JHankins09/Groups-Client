@@ -23,8 +23,15 @@ const goToCreateGroup = responseData => {
   $('.title').text('Create')
 }
 
+const goToEditGroup = () => {
+  $('.secondary').addClass('hide')
+  $('.editGroupView').removeClass('hide')
+  $('.title').text('Create')
+}
+
 module.exports = {
   back,
   accountSettings,
-  goToCreateGroup
+  goToCreateGroup,
+  goToEditGroup
 }

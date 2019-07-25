@@ -18,9 +18,18 @@ const onUserCommunities = event => {
   ui.goToUserCommunities()
 }
 
+const onEditGroup = () => {
+  ui.goToEditGroup()
+}
+
+const addHandlers = () => {
+  $('.content').on('click', '.editGroup', onEditGroup)
+}
+
 module.exports = {
   onBack,
   onAccountSettings,
   onGoToCreateGroup,
-  onUserCommunities
+  onUserCommunities,
+  addHandlers
 }

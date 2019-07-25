@@ -62,7 +62,7 @@ const changePasswordFail = respondData => {
 }
 
 const userDataUpdated = responseData => {
-  console.log(responseData)
+  store.userData = responseData.user
 }
 
 module.exports = {

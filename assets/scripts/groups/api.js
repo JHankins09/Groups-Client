@@ -13,6 +13,18 @@ const getGroups = () => {
   })
 }
 
+const updateGroup = (formData, groupID) => {
+  return $.ajax({
+    url: config.apiUrl + '/groups/' + groupID,
+    data: formData,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+
+  })
+}
+
 const deleteGroup = (groupId) => {
   return $.ajax({
     url: config.apiUrl + '/groups/' + groupId,
@@ -48,5 +60,6 @@ module.exports = {
   getGroups,
   createGroup,
   getGroup,
-  deleteGroup
+  deleteGroup,
+  updateGroup
 }

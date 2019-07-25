@@ -1,16 +1,26 @@
 'use strict'
 const store = require('../store.js')
+const showMemberhshipsTemplate = require('../templates/memberships-groups.handlebars')
+const showMembershipTemplate = require('../templates/single-membership-page.handlebars')
 
 const getMembershipsSuccess = (responseData) => {
-  // const myMemberships = responseData.
-  console.log('Succes', store.user.groups, store.user.memberships)
+  $('.secondary').addClass('hide')
+  $('.GroupsViewAll').removeClass('hide')
+  $('.createGroupView').addClass('hide')
+  $('.title').text('Get back to your groups')
+  $('.content').html('')
+  const showMembershipsHtml = showMemberhshipsTemplate({ groups: store.userData.groups })
+  $('.content').append(showMembershipsHtml)
+  console.log('Succes', store.userData.groups)
 }
 
-const getMembershipFail = (responseData) => {
-  console.log('Fail', responseData)
+const getMembershipSuccess = (responseData) => {
+  const showGroupHtml = showMembershipTemplate({ group: responseData.group })
+  $('.content').html('')
+  $('.content').append(showGroupHtml)
 }
 
 module.exports = {
   getMembershipsSuccess,
-  getMembershipFail
+  getMembershipSuccess
 }

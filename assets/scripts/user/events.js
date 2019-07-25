@@ -48,7 +48,6 @@ const onSignOut = event => {
 // Used to help provide memberhsips for active user
 const onGetUserData = event => {
   const userID = store.user.id
-  console.log(userID)
   api.getUserData(userID)
     .then(ui.userDataUpdated)
 }

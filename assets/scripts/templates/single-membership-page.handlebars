@@ -1,0 +1,45 @@
+<!-- For retrieving all groups -->
+
+<div class="row col-12">
+  <div class="col-md-1 col-12"></div>
+  <div class="card col-md-10 col-12" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title"><span class="standard" style="font-size: 1.2em; font-family: 'Josefin Sans', sans-serif;">Group Name:</span> <br/>
+        {{group.Name}} <span class="badge badge-info" style="font-family:'Josefin sANS', sans-serif;">{{group.Type}}</h5>
+      <br/>
+      <br/>
+      <p class="card-text">{{group.Intro}}</p>
+    </div>
+    <ul class="list-group list-group-flush" data-id="{{group.id}}">
+      <h5>Group Members:</h5>
+      {{#each group.users as |user|}}
+      <li class="list-group-item groupMailingList">{{user.email}}</li>
+      {{/each}}
+    </ul>
+
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#editGroupToggle">Edit this group!</button>
+    <div class="row">
+      <div class="col">
+        <div class="collapse single-collapse" id="editGroupToggle">
+          <div class="card card-body updateGroup">
+            <form class="editGroup" id="editGroup" data-id={{group.id}}>
+              <h4>Name</h4>
+              <input name="group[Name]" type="text" required placeholder="{{group.Name}}">
+              <h4>Type</h4>
+              <input name="group[Type]" type="text" required placeholder="{{group.Type}}">
+              <h4>Description</h4>
+              <input name="group[Intro]" type="text" required placeholder="{{group.Intro}}">
+              <button type="submit" class="btn btn-outline-success center-block">Update</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+      <li class="list-group-item"><button type="button" class="btn btn-danger deleteMembership">Leave {{group.Name}}</button></li>
+      <li class="list-group-item"><button type="button" class="btn btn-secondary getMemberships">Back to my memberships &larr;</button></li>
+    </ul>
+    <br/>
+    <br/>
+  </div>
+  <div class="col-md-1 col-12"></div>
+</div>

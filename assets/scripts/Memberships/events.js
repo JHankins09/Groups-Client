@@ -3,6 +3,7 @@
 const api = require('./api')
 const store = require('./../store.js')
 const ui = require('./ui')
+const groupApi = require('./../groups/api.js')
 
 const onJoinGroup = event => {
   store.newMembership = $(event.target).closest('ul').data('id')
@@ -18,6 +19,13 @@ const onJoinGroup = event => {
     .catch(console.log(`fuck you, get out.`))
 }
 
+const onGetMembership = event => {
+  const groupid = $(event.target).data('id')
+  groupApi.getGroup(groupid)
+    .then(ui.getMembershipSuccess)
+    .catch(ui.getGroupFail)
+}
+
 const onGetMemberships = event => {
   api.getMemberships()
     .then(ui.getMembershipsSuccess)
@@ -26,9 +34,11 @@ const onGetMemberships = event => {
 
 const addHandlers = () => {
   $('.content').on('click', '.joinGroup', onJoinGroup)
+  $('.content').on('click', '.viewMembership', onGetMembership)
 }
 
 module.exports = {
   addHandlers,
-  onGetMemberships
+  onGetMemberships,
+  onGetMembership
 }

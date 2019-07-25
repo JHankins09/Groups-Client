@@ -26,7 +26,7 @@ const getGroupsSuccess = responseData => {
   $('.secondary').addClass('hide')
   $('.GroupsViewAll').removeClass('hide')
   $('.createGroupView').addClass('hide')
-  $('.title').text('Explore your groups')
+  $('.title').text('Explore new communities')
   const showGroupsHtml = showGroupsTemplate({ groups: responseData.groups })
   $('.content').html('')
   $('.content').append(showGroupsHtml)

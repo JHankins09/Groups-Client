@@ -40,9 +40,11 @@ $(() => {
   membershipEvents.addHandlers()
   // Get memberships
   $('#userCommunities').on('click', userEvents.onGetUserData)
-  // $('#userCommunities').on('click', membershipEvents.onGetMemberships)
+  $('#userCommunities').on('click', membershipEvents.onGetMemberships)
 
   // General App Features
+  // handlebars events
+  generalEvents.addHandlers()
   // view Account Settings
   $('#accountSettings').on('click', generalEvents.onAccountSettings)
   // Other stuff...
