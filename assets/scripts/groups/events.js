@@ -53,10 +53,8 @@ const onUpdateGroup = event => {
   const form = event.target
   const formData = getFormFields(form)
   const groupID = $(event.target).data('id')
-  console.log(groupID)
-  console.log(formData)
   api.updateGroup(formData, groupID)
-    .then(console.log('Success!'))
+    .then(ui.updateGroupSuccess)
     .catch(console.log('Failure! DAMMIT!'))
 }
 

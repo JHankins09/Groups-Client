@@ -2,6 +2,7 @@
 
 const showGroupsTemplate = require('../templates/groups-page.handlebars')
 const showGroupTemplate = require('../templates/single-group-page.handlebars')
+const showMembershipTemplate = require('../templates/single-membership-page.handlebars')
 
 const messageReset = function () {
   $('form').trigger('reset')
@@ -64,6 +65,12 @@ const createGroupFail = responseData => {
   messageReset()
 }
 
+const updateGroupSuccess = responseData => {
+  const showGroupHtml = showMembershipTemplate({ group: responseData.group })
+  $('.content').html('')
+  $('.content').append(showGroupHtml)
+}
+
 module.exports = {
   getGroupsSuccess,
   getGroupsFail,
@@ -72,5 +79,6 @@ module.exports = {
   getGroupFail,
   getGroupSuccess,
   deleteSuccess,
-  deleteFailure
+  deleteFailure,
+  updateGroupSuccess
 }

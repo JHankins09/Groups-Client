@@ -13,7 +13,6 @@ const onJoinGroup = event => {
       user_id: store.user.id
     }
   }
-  console.log(data)
   api.joinGroup(data)
     .then(console.log(`You're in the band`))
     .catch(console.log(`fuck you, get out.`))
