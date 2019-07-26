@@ -8,6 +8,33 @@ const messageReset = function () {
   $('.system-message').delay(2000).fadeOut(200)
 }
 
+const home = function () {
+  $('.secondary').removeClass('hide')
+  $('.GroupsViewAll').addClass('hide')
+  $('.accountDetails').addClass('hide')
+  $('.createGroupView').addClass('hide')
+  $('.content').html('')
+  $('.title').text('Dashboard')
+}
+
+const updateGroupSuccess = () => {
+  home()
+  $('.system-message').show()
+  $('.system-message').text('Nice! Thanks for updating!')
+  messageReset()
+}
+
+const fail = () => {
+  $('.secondary').removeClass('hide')
+  $('.GroupsViewAll').addClass('hide')
+  $('.accountDetails').addClass('hide')
+  $('.createGroupView').addClass('hide')
+  $('.content').html('')
+  $('.title').text('Dashboard')
+  $('.system-message').text(`Oops! That didn't work...`)
+  messageReset()
+}
+
 // Delete Group
 const deleteSuccess = (responseData) => {
   $('.system-message').show()
@@ -72,5 +99,7 @@ module.exports = {
   getGroupFail,
   getGroupSuccess,
   deleteSuccess,
-  deleteFailure
+  deleteFailure,
+  fail,
+  updateGroupSuccess
 }

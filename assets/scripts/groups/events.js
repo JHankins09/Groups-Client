@@ -56,8 +56,8 @@ const onUpdateGroup = event => {
   console.log(groupID)
   console.log(formData)
   api.updateGroup(formData, groupID)
-    .then(console.log('Success!'))
-    .catch(console.log('Failure! DAMMIT!'))
+    .then(ui.updateGroupSuccess)
+    .catch(ui.fail)
 }
 
 // And Handlers that live in Handlebars Template

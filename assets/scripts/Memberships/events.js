@@ -13,10 +13,9 @@ const onJoinGroup = event => {
       user_id: store.user.id
     }
   }
-  console.log(data)
   api.joinGroup(data)
-    .then(console.log(`You're in the band`))
-    .catch(console.log(`fuck you, get out.`))
+    .then(ui.joinGroupSuccess)
+    .catch(ui.fail)
 }
 
 const onGetMembership = event => {
@@ -32,9 +31,22 @@ const onGetMemberships = event => {
     .catch(ui.getMembershipFail)
 }
 
+const onDeleteMembership = event => {
+  const groupID = $(event.target).data('id')
+  console.log(store.userData.memberships)
+  const membershipsList = store.userData.memberships
+  const membershipToDelete = membershipsList.find(membershipList => membershipList.group_id === groupID).id
+  console.log('To Delete', membershipToDelete)
+  api.deleteMembership(membershipToDelete)
+    .then(ui.deleteMembershipSuccess)
+    .catch(ui.fail)
+}
+
 const addHandlers = () => {
   $('.content').on('click', '.joinGroup', onJoinGroup)
   $('.content').on('click', '.viewMembership', onGetMembership)
+  $('.content').on('click', '.deleteMembership', onDeleteMembership)
+  $('.content').on('click', '.backToMemberships', onGetMemberships)
 }
 
 module.exports = {
