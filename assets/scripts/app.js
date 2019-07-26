@@ -39,8 +39,8 @@ $(() => {
   // Handlebars Events
   membershipEvents.addHandlers()
   // Get memberships
-  $('#userCommunities').on('click', userEvents.onGetUserData)
   $('#userCommunities').on('click', membershipEvents.onGetMemberships)
+  $('#userCommunities').on('click', userEvents.onGetUserData)
 
   // General App Features
   // handlebars events

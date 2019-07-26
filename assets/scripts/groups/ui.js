@@ -2,11 +2,38 @@
 
 const showGroupsTemplate = require('../templates/groups-page.handlebars')
 const showGroupTemplate = require('../templates/single-group-page.handlebars')
-const showMembershipTemplate = require('../templates/single-membership-page.handlebars')
+// const showMembershipTemplate = require('../templates/single-membership-page.handlebars')
 
 const messageReset = function () {
   $('form').trigger('reset')
   $('.system-message').delay(2000).fadeOut(200)
+}
+
+const home = function () {
+  $('.secondary').removeClass('hide')
+  $('.GroupsViewAll').addClass('hide')
+  $('.accountDetails').addClass('hide')
+  $('.createGroupView').addClass('hide')
+  $('.content').html('')
+  $('.title').text('Dashboard')
+}
+
+const updateGroupSuccess = () => {
+  home()
+  $('.system-message').show()
+  $('.system-message').text('Nice! Thanks for updating!')
+  messageReset()
+}
+
+const fail = () => {
+  $('.secondary').removeClass('hide')
+  $('.GroupsViewAll').addClass('hide')
+  $('.accountDetails').addClass('hide')
+  $('.createGroupView').addClass('hide')
+  $('.content').html('')
+  $('.title').text('Dashboard')
+  $('.system-message').text(`Oops! That didn't work...`)
+  messageReset()
 }
 
 // Delete Group
@@ -65,11 +92,11 @@ const createGroupFail = responseData => {
   messageReset()
 }
 
-const updateGroupSuccess = responseData => {
-  const showGroupHtml = showMembershipTemplate({ group: responseData.group })
-  $('.content').html('')
-  $('.content').append(showGroupHtml)
-}
+// const updateGroupSuccess = responseData => {
+//   const showGroupHtml = showMembershipTemplate({ group: responseData.group })
+//   $('.content').html('')
+//   $('.content').append(showGroupHtml)
+// }
 
 module.exports = {
   getGroupsSuccess,
@@ -80,5 +107,6 @@ module.exports = {
   getGroupSuccess,
   deleteSuccess,
   deleteFailure,
+  fail,
   updateGroupSuccess
 }

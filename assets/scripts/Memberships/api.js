@@ -24,7 +24,18 @@ const getMemberships = () => {
   })
 }
 
+const deleteMembership = (id) => {
+  return $.ajax({
+    url: config.apiUrl + '/memberships/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   joinGroup,
-  getMemberships
+  getMemberships,
+  deleteMembership
 }
