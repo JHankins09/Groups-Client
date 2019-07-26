@@ -1,132 +1,133 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+# Groups
 
-# browser-template
+This repo is built in tandem with https://github.com/JHankins09/Groups-Fullstack-API
 
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
+## Getting Started
 
-## Installation
+### Planning
 
-1. [Download](../../archive/master.zip) this template.
-    - **Do Not Fork And Clone**
-    - Click the "Clone or Download" button and select "Download Zip".
-1. Move to the `wdi/projects` directory, then unzip the template directory with
-    `unzip /Users/<user-name>/Downloads/browser-template-master.zip`.
-1. Rename the template directory from `browser-template-master` to
-    `<project-name>-client`.
-1. Empty [`README.md`](README.md) and fill with your own content.
-1. Replace all instances of `
+#### Initial User Stories
+* As a user, I want to be able to create, join, or leave a group.
 
+* As a user, I want to be able to post messages to my group.
 
-` with the name of
-    your project.
-    - You can search for all instances of text in Atom by pressing
-    `commant + shift + f` on Mac or `ctrl + shift + f` on WSL.
-1. Move into the new project and `git init`.
-1. Add all of the files in your project with the command `git add --all`.
-      - **Note: This is the only time you should run this command!**
-1. Commit all of your files with the command `git commit`.
-      - Your commit title should read `Initial commit`.
-1. Install dependencies with `npm install`.
-1. Create a new repository on [github.com](https://github.com),
-    _not GitHub Enterprise_.
-1. Name the new repository with the same name used on Step 3.
-1. Follow the instructions on your new repository's setup page. For details on
-   how to push to Github, refer to the section on Github entitled "…or push an existing
-   repository from the command line." Further documentation can be found [here](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/).
+* As a group member, I want to be able to see other members of my group.
 
-## Structure
+* As a user, I want to be able to see when there is new content in a group I've joined.
 
-### Scripts
+#### Initial Wire framing
 
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
-The "manifest" or entry-point is
-[`assets/scripts/app.js`](assets/scripts/app.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
-
-### Config
-
-Developers should set `apiUrls.production` and `apiUrls.development` in
-[`assets/scripts/config.js`](assets/scripts/config.js).  With
-`apiUrls` set, developers may rely on `apiUrl` as the base for API
-URLs.
-
-### Styles
-
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss). Bootstrap version 3 is
-included in this template.
-
-### Forms and Using `getFormFields`
-
-Developers should use [getFormFields](get-form-fields.md) to retrieve form data
-to send to an API.
-
-### Deployment
-
-To deploy a browser-template based SPA, run `grunt deploy`.
-
-## Adding Images
-
-To add images to your project, you must store them in the `public` directory.
-To use the image in HTML or CSS, write the path to the image like this:
-
-```html
-<img src="public/cat.jpg">
-```
-or
-```css
-#my-cool-div {
-  background-image: url('public/cat.jpg')
-}
-```
-
-Note that there's no `./` or `/` in front of `public/filename.jpg`.
-
-## Adding Fonts
-
-To add custom fonts to your app, you can either use a CDN like Google Fonts, or
-you can download the fonts and save them in the `public` directory. If you use
-the former method, follow the directions on the website providing the fonts.
-
-For local fonts, put the files in `public`, and then import and use them in a
-`.scss` file like this:
-
-```scss
-@font-face {
-  font-family: 'Nature Beauty';
-  src: url('public/Nature-Beauty.ttf') format('truetype');
-}
-
-.element-with-custom-font {
-  font-family: 'Nature Beauty';
-}
-```
-
-## Tasks
-
-Developers should run these often!
-
-- `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
-- `grunt make-standard`: reformats all your code in the JavaScript Standard Style
-- `grunt <server|serve|s>`: generates bundles, watches, and livereloads
-- `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
-- `grunt deploy`: builds and deploys master branch
+Client - https://app.moqups.com/4UD0R7wRns/view/page/ad64222d5
+ERD - https://media.git.generalassemb.ly/user/21061/files/f0035200-ac63-11e9-81a6-46ff58fe4864
 
 
-## Additional Resources
+#### This project was planned to be built in 3 primary parts:
+  1. Build out API
+  * Build out API to allow for user, membership, group relationships
+  * Apply relationships that allow for creation and deletion of groups and to tie them to user accounts
+  * Update for protected and open read functionality
+  2. Development of Client
+    * Build out user authentication functionality including sign-up, sign-in, change-password, etc.
+    * Build groups content for creating and viewing groups - as well as ability to delete groups
+    * Build out membership functionality to join groups and delete if you are a member of said group. Also allows to leave groups and see roster of members.
+  3. Adpot API feedback for additional Client functionality
+    * As funtionality grew, updated API feedback to allow for additional data to be transfered to Client
+  4. Include additional bonus feature
+    * Group validation for 1 group by said name.
+    * Group type drop-down list for more precise badges
+    * Membership validtation to only allow 1 membership per group/member pair.
 
-- [Modern Javascript Explained for Dinosaurs](https://medium.com/@peterxjang/modern-javascript-explained-for-dinosaurs-f695e9747b70)
-- [Making Sense of Front End Build Tools](https://medium.freecodecamp.org/making-sense-of-front-end-build-tools-3a1b3a87043b)
+### Development Process
 
-## [License](LICENSE)
+Majority of time was spent developing API back end. This was a difficult process.
 
-1. All content is licensed under a CC­BY­NC­SA 4.0 license.
-1. All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+Additional experience with Rails will ideally allow for uniqui groups and user/group pairs, etc and a much speedier API build.
+
+Front end became a bit unruley as it grew. Many views and some API calls are slower than an average user may navigate the app, but overall a decent flow. Some jarring relocations to the home nav can be slightly disorienting, but this can be updated as additional functionality becomes available.
+ment.
+
+
+## Unresolved issues / features for future release
+
+- Responsive Design
+  * Mobile UI
+  * Tablet UI
+
+- Interactive UI
+  * Stronger form usage
+  * Higher sign-up rate upon visit
+
+- Automatic Sign In
+
+- calendar for group event scheduling
+
+- group chat/post function for member communication
+
+- group roster email macro.
+
+- SEO enabled
+
+- Smoother navigation and landing pages
+
+## Built With (technologies used)
+
+### The technologies include in the build of this game are:
+- JavaScript
+- JSON
+- AJAX
+- CSS
+- HTML
+- Ruby
+- Ruby on Rails
+- Handlebars.js
+
+## Versioning
+
+### Scripts - Client
+
+#### User
+  This houses all AJAX and JS functionality that impacts user account creation, login, or changes.
+
+#### Groups
+  This hosues all AJAX and JS functionality that impacts the creation, editing, and deletion of unique groups.
+
+#### Memberships
+  This houses all AJAX and JS functionality that impacts the creation and deletion of memberships.
+
+#### General
+  This houses all JS functionality that does not explicetly fall in the above. -Does not communicate to API-
+
+### Scripts - API
+
+#### Controllers
+  ##### Groups
+    - Contains all ruby based code base for handling of Group specific resources in API
+  ##### Memberships
+    - Contains all ruby based code base for handling of Membership specific resources in API
+  ##### Users
+    - Contains all ruby based code base for handling of User specific resources in API
+
+#### Models
+  ##### Groups
+    - Contains all model and class type orientations for Groups resources
+  ##### Memberships
+    - Contains all model and class type orientations for Memberships resources
+  ##### Users
+    - Contains all model and class type orientations for Users resources
+
+#### Serializers
+  ##### Groups
+    - Determines returned data from Groups resource (primary table)
+  ##### Memberships
+    - Determines returned data from Memberships resource (Join table)
+  ##### Users
+    - Determines returned data from Users resource (primary table)
+
+## Author
+### James B. Hankins
+
+LinkedIn:   https://www.linkedin.com/in/james-hankins/
+GitHub:     https://github.com/JHankins09
+
+## Acknowledgments
+This project is built as the result of participating in General Assembly Boston's Software Engineering Immersive course.
