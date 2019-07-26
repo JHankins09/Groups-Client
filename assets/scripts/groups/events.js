@@ -17,7 +17,6 @@ const onGetGroup = event => {
   api.getGroup(groupid)
     .then(ui.getGroupSuccess)
     .catch(ui.getGroupFail)
-  // console.log('Clicked!', (event.target).data('id'))
 }
 
 // Delete a group

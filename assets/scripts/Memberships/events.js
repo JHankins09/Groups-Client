@@ -33,10 +33,8 @@ const onGetMemberships = event => {
 
 const onDeleteMembership = event => {
   const groupID = $(event.target).data('id')
-  console.log(store.userData.memberships)
   const membershipsList = store.userData.memberships
   const membershipToDelete = membershipsList.find(membershipList => membershipList.group_id === groupID).id
-  console.log('To Delete', membershipToDelete)
   api.deleteMembership(membershipToDelete)
     .then(ui.deleteMembershipSuccess)
     .catch(ui.fail)
