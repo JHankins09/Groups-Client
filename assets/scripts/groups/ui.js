@@ -51,6 +51,7 @@ const deleteFailure = responseData => {
 
 // get all groups
 const getGroupsSuccess = responseData => {
+  console.log(responseData)
   $('.secondary').addClass('hide')
   $('.GroupsViewAll').removeClass('hide')
   $('.createGroupView').addClass('hide')
@@ -68,6 +69,7 @@ const getGroupsFail = responseData => {
 
 // get a single groups
 const getGroupSuccess = responseData => {
+  console.log(responseData)
   const showGroupHtml = showGroupTemplate({ group: responseData.group })
   $('.content').html('')
   $('.content').append(showGroupHtml)

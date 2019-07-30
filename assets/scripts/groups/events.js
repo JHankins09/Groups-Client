@@ -3,12 +3,15 @@
 const api = require('./api')
 const ui = require('./ui')
 const getFormFields = require('./../../../lib/get-form-fields')
+const store = require('./../store.js')
 
 // Get all groups
 const onGetGroups = event => {
+  console.log(store.user.token)
   api.getGroups()
     .then(ui.getGroupsSuccess)
     .catch(ui.getGroupsFail)
+    .catch(console.log(event))
 }
 
 // Get a single group

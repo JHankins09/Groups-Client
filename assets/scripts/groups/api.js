@@ -13,6 +13,16 @@ const getGroups = () => {
   })
 }
 
+const getGroup = (groupid) => {
+  return $.ajax({
+    url: config.apiUrl + '/groups/' + groupid,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const updateGroup = (formData, groupID) => {
   return $.ajax({
     url: config.apiUrl + '/groups/' + groupID,
@@ -29,16 +39,6 @@ const deleteGroup = (groupId) => {
   return $.ajax({
     url: config.apiUrl + '/groups/' + groupId,
     method: 'DELETE',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-}
-
-const getGroup = (groupid) => {
-  return $.ajax({
-    url: config.apiUrl + '/groups/' + groupid,
-    method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
