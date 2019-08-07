@@ -5,11 +5,11 @@
   <div class="col-md-1 col-12"></div>
   <div class="card col-md-10 col-12" style="width: 18rem;">
     <div class="card-body">
-      <h5 class="card-title">{{group.Name}} <span class="badge badge-info" style="font-family:'Josefin sANS', sans-serif;">{{group.Type}}</h5>
-      <p class="card-text">{{group.Intro}}</p>
+      <h5 class="card-title">{{group.group_name}} <span class="badge badge-info" style="font-family:'Josefin sANS', sans-serif;">{{group.group_type}}</h5>
+      <p class="card-text">{{group.group_description}}</p>
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">Members: {{group.users.length}}</li>
+      <li class="list-group-item">Administrator Email: {{group.group_admin}}</li>
       <li class="list-group-item"></li>
     </ul>
     <button type="button" class="btn btn-outline-secondary viewGroup" data-id="{{group.id}}">View</button>

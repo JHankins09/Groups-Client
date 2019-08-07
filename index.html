@@ -204,9 +204,10 @@
       <div class="col-md-2 col-12"></div>
       <form class="d-flex flex-column col-md-8 col-12" id="create-group">
       <h3>Build your group here.</h3>
-      <input name="group[Name]" type="text" required placeholder="Group name">
-      <input name="group[Type]" type="text" required placeholder="Type">
-      <input name="group[Intro]" type="text" required placeholder="Description">
+      <input name="group[group_name]" type="text" required placeholder="Group name">
+      <input name="group[group_type]" type="text" required placeholder="Type">
+      <input name="group[group_description]" type="text" required placeholder="Description">
+      <input name="group[group_admin]" type="hidden">
       <button type="submit" class="btn btn-primary center-block">Create</button>
     </form>
     <div class="col-md-2 col-12"></div>
