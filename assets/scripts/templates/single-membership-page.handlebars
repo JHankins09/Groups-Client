@@ -5,18 +5,19 @@
   <div class="card col-md-10 col-12" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title"><span class="standard" style="font-size: 1.2em; font-family: 'Josefin Sans', sans-serif;">Group Name:</span> <br/>
-        {{group.Name}} <span class="badge badge-info" style="font-family:'Josefin sANS', sans-serif;">{{group.Type}}</h5>
+        {{group.group_name}} <span class="badge badge-info" style="font-family:'Josefin sANS', sans-serif;">{{group.group_type}}</h5>
       <br/>
       <br/>
-      <p class="card-text">{{group.Intro}}</p>
+      <p class="card-text">{{group.group_description}}</p>
     </div>
     <ul class="list-group list-group-flush" data-id="{{group.id}}">
-      <h5>Group Members:</h5>
-      {{#each group.users as |user|}}
-      <li class="list-group-item groupMailingList">{{user.email}}</li>
+      <h5>Group Administrator &mdash; {{group.group_admin}}</h5>
+      <h6>Group mailing list</h6>
+      {{#each group.memberships as |user|}}
+      <li class="list-group-item groupMailingList">{{contact_email}}</li>
       {{/each}}
     </ul>
-
+    {{#if group.editable}}
       <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#editGroupToggle">Edit this group!</button>
     <div class="row">
       <div class="col">
@@ -35,8 +36,9 @@
         </div>
       </div>
     </div>
+    {{/if}}
       <li class="list-group-item"><button type="button" class="btn btn-danger deleteMembership" data-id="{{group.id}}">Leave {{group.Name}}</button></li>
-      <li class="list-group-item"><button type="button" class="btn btn-secondary backToMemberships"">Back to my memberships &larr;</button></li>
+      <li class="list-group-item"><button type="button" class="btn btn-secondary backToMemberships">Back to my memberships &larr;</button></li>
     </ul>
     <br/>
     <br/>

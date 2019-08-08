@@ -15,6 +15,7 @@ const joinGroup = buttonData => {
 }
 
 const getMemberships = () => {
+  console.log('Getting Memberships...')
   return $.ajax({
     url: config.apiUrl + '/memberships/',
     method: 'GET',

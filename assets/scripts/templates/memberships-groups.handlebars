@@ -1,12 +1,14 @@
-{{#each userData.groups as |group|}}
+{{#each userMemberships.memberships as |org|}}
 <div class="row col-md-6 col-12">
   <div class="col-md-1 col-12"></div>
   <div class="card col-md-10 col-12" style="width: 18rem;">
     <div class="card-body">
-      <h5 class="card-title">{{group.Name}} <span class="badge badge-info" style="font-family:'Josefin sANS', sans-serif;">{{group.Type}}</h5>
-      <p class="card-text">{{group.Intro}}</p>
+      <h5 class="card-title">{{org.group.group_name}} <span class="badge badge-info" style="font-family:'Josefin sANS', sans-serif;">{{org.group.group_type}}</h5>
+      <p class="card-text">{{org.group.group_description}}</p>
+      <p class="card-text">Grand Pubah: {{org.group.group_admin}}</p>
+      <p class="card-text">Roster size: {{org.group.memberships.length}}</p>
     </div>
-    <button type="button" class="btn btn-outline-secondary viewMembership" data-id="{{group.id}}">View</button>
+    <button type="button" class="btn btn-outline-secondary viewMembership" data-id="{{org.group.id}}">View</button>
   </div>
   <div class="col-md-1 col-12"></div>
 </div>
