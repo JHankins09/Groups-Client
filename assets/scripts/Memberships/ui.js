@@ -49,13 +49,11 @@ const getMembershipsSuccess = (responseData) => {
   $('.createGroupView').addClass('hide')
   $('.title').text('Get back to your groups')
   $('.content').html('')
-  console.log('Data for groups handlebars ', responseData)
   const showMembershipsHtml = showMemberhshipsTemplate({ userMemberships: responseData })
   $('.content').append(showMembershipsHtml)
 }
 
 const getMembershipSuccess = (responseData) => {
-  console.log('Data to pass to handlebars ', responseData.group)
   const showGroupHtml = showMembershipTemplate({ group: responseData.group })
   $('.content').html('')
   $('.content').append(showGroupHtml)

@@ -25,7 +25,6 @@ const getMemberships = () => {
 }
 
 const deleteMembership = (id) => {
-  console.log('Where to delete ', config.apiUrl + '/memberships/' + id)
   return $.ajax({
     url: config.apiUrl + '/memberships/' + id,
     method: 'DELETE',
