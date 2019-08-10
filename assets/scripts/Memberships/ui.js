@@ -54,6 +54,7 @@ const getMembershipsSuccess = (responseData) => {
 }
 
 const getMembershipSuccess = (responseData) => {
+  console.log(responseData.group)
   const showGroupHtml = showMembershipTemplate({ group: responseData.group })
   $('.content').html('')
   $('.content').append(showGroupHtml)
