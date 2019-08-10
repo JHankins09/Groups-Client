@@ -20,6 +20,8 @@ const onJoinGroup = event => {
 }
 
 const onGetMembership = event => {
+  debugger
+  console.log('Event target :', $(event.target))
   console.log('before sending to store: ', $(event.target).data('membership'))
   store.membershipFocus = $(event.target).data('membership')
   console.log('after sending to store: ', store.membershipFocus)
