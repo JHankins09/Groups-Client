@@ -21,6 +21,7 @@ const onJoinGroup = event => {
 
 const onGetMembership = event => {
   store.membershipFocus = $(event.target).data('membership')
+  console.log('Memberhsip in focus:', store.membershipFocus)
   const groupid = $(event.target).data('id')
   groupApi.getGroup(groupid)
     .then(ui.getMembershipSuccess)
