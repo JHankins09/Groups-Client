@@ -35,6 +35,7 @@ const onGetMemberships = event => {
 }
 
 const onDeleteMembership = event => {
+  console.log('Membership ID', store.membershipFocus)
   api.deleteMembership(store.membershipFocus)
     .then(console.log)
     .then(ui.deleteMembershipSuccess)
