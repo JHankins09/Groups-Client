@@ -15,7 +15,6 @@ const joinGroup = buttonData => {
 }
 
 const getMemberships = () => {
-  console.log('Getting Memberships...')
   return $.ajax({
     url: config.apiUrl + '/memberships/',
     method: 'GET',
@@ -26,7 +25,6 @@ const getMemberships = () => {
 }
 
 const deleteMembership = (id) => {
-  console.log('Starting Delete', store.user)
   console.log('Where to delete ', config.apiUrl + '/memberships/' + id)
   return $.ajax({
     url: config.apiUrl + '/memberships/' + id,

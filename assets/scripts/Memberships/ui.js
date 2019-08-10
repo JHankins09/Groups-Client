@@ -44,7 +44,6 @@ const fail = () => {
 }
 
 const getMembershipsSuccess = (responseData) => {
-  console.log('Memberhips retrieved', responseData.memberships)
   $('.secondary').addClass('hide')
   $('.GroupsViewAll').removeClass('hide')
   $('.createGroupView').addClass('hide')
@@ -55,7 +54,6 @@ const getMembershipsSuccess = (responseData) => {
 }
 
 const getMembershipSuccess = (responseData) => {
-  console.log('data to use', responseData.group)
   const showGroupHtml = showMembershipTemplate({ group: responseData.group })
   $('.content').html('')
   $('.content').append(showGroupHtml)

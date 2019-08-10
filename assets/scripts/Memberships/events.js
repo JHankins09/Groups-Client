@@ -28,7 +28,6 @@ const onGetMembership = event => {
 }
 
 const onGetMemberships = event => {
-  console.log('get memberhips', event)
   api.getMemberships()
     .then(ui.getMembershipsSuccess)
     .catch(ui.getMembershipFail)
@@ -37,7 +36,6 @@ const onGetMemberships = event => {
 const onDeleteMembership = event => {
   console.log('Membership ID', store.membershipFocus)
   api.deleteMembership(store.membershipFocus)
-    .then(console.log)
     .then(ui.deleteMembershipSuccess)
     .catch(ui.fail)
 }

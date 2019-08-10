@@ -7,11 +7,9 @@ const store = require('./../store.js')
 
 // Get all groups
 const onGetGroups = event => {
-  console.log(store.user.token)
   api.getGroups()
     .then(ui.getGroupsSuccess)
     .catch(ui.getGroupsFail)
-    .catch(console.log(event))
 }
 
 // Get a single group
@@ -30,7 +28,6 @@ const deleteGroupSuccess = () => {
 
 const onDeleteGroup = event => {
   const groupId = $(event.target).closest('ul').data('id')
-  console.log('delete with groupID', groupId, 'and token', store.user.token)
   api.deleteGroup(groupId)
     .then(deleteGroupSuccess)
     .catch(ui.deleteFailure)
@@ -47,7 +44,6 @@ const onCreateGroup = event => {
   const form = event.target
   const formData = getFormFields(form)
   formData.group.group_admin = store.user.email
-  console.log('create group with', formData)
   api.createGroup(formData)
     .then(createGroupSuccess)
     .catch(ui.createGroupFail)

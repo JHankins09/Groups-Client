@@ -28,7 +28,6 @@ const signInSuccess = responseData => {
   $('.system-message').show()
   $('.system-message').text(`Logged in as: ${store.user.email}`)
   messageReset()
-  console.log(store.user)
 }
 
 const signInFailure = responseData => {
