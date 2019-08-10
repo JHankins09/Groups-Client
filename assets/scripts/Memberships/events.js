@@ -20,6 +20,7 @@ const onJoinGroup = event => {
 }
 
 const onGetMembership = event => {
+  store.membershipFocus = $(event.target).data('membership')
   const groupid = $(event.target).data('id')
   groupApi.getGroup(groupid)
     .then(ui.getMembershipSuccess)
@@ -34,14 +35,8 @@ const onGetMemberships = event => {
 }
 
 const onDeleteMembership = event => {
-  const groupID = $(event.target).data('id')
-  console.log(groupID)
-  // console.log(store)
-  // const membershipsList = store.userData.memberships
-  // console.log(membershipsList)
-  // const membershipToDelete = membershipsList.find(membershipList => membershipList.group_id === groupID).id
-  // console.log(membershipToDelete)
-  api.deleteMembership(groupID)
+  api.deleteMembership(store.membershipFocus)
+    .then(console.log)
     .then(ui.deleteMembershipSuccess)
     .catch(ui.fail)
 }

@@ -24,6 +24,7 @@ const getGroup = (groupid) => {
 }
 
 const updateGroup = (formData, groupID) => {
+  console.log('Update content', formData, 'ID to be updated', groupID)
   return $.ajax({
     url: config.apiUrl + '/groups/' + groupID,
     data: formData,

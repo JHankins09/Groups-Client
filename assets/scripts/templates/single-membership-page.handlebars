@@ -12,6 +12,7 @@
     </div>
     <ul class="list-group list-group-flush" data-id="{{group.id}}">
       <h5>Group Administrator &mdash; {{group.group_admin}}</h5>
+      <p>Memberhips ID: {{id}}
       <h6>Group mailing list</h6>
       {{#each group.memberships as |user|}}
       <li class="list-group-item groupMailingList">{{contact_email}}</li>
@@ -25,11 +26,12 @@
           <div class="card card-body updateGroup">
             <form class="editGroup" id="editGroup" data-id={{group.id}}>
               <h4>Name</h4>
-              <input name="group[Name]" type="text" required placeholder="{{group.Name}}">
+              <input name="group[group_name]" type="text" required value="{{group.group_name}}">
               <h4>Type</h4>
-              <input name="group[Type]" type="text" required placeholder="{{group.Type}}">
+              <input name="group[group_type]" type="text" required value="{{group.group_type}}">
               <h4>Description</h4>
-              <input name="group[Intro]" type="text" required placeholder="{{group.Intro}}">
+              <input name="group[group_description]" type="text" required value="{{group.group_description}}">
+              <input name="group[group_admin]" type="hidden" required value="{{group.group_admin}}">
               <button type="submit" class="btn btn-outline-success center-block">Update</button>
             </form>
           </div>
