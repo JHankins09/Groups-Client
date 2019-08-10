@@ -20,8 +20,9 @@ const onJoinGroup = event => {
 }
 
 const onGetMembership = event => {
+  console.log('before sending to store: ', $(event.target).data('membership'))
   store.membershipFocus = $(event.target).data('membership')
-  console.log('Memberhsip in focus:', store.membershipFocus)
+  console.log('after sending to store: ', store.membershipFocus)
   const groupid = $(event.target).data('id')
   groupApi.getGroup(groupid)
     .then(ui.getMembershipSuccess)
