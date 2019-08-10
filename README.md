@@ -1,6 +1,6 @@
 # Groups
 
-This repo is built in tandem with https://github.com/JHankins09/Groups-Fullstack-API
+This repo is built in tandem with https://github.com/JHankins09/Groups-API-Rebuild
 
 ## Getting Started
 
